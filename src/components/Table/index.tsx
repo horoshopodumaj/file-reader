@@ -49,6 +49,7 @@ const Table: React.FC<ITableProps> = ({ data, columns, searchQuery }) => {
     }));
   }, [columns, searchQuery]);
 
+  //eslint-disable-next-line
   const table = useReactTable({
     data,
     columns: tableColumns,

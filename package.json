@@ -9,7 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"./src/**/*.{[jt]s,[jt]sx,scss}\"",
-    "analyze": "prettier --check \"./src/**/*.{[jt]s,[jt]sx,scss}\""
+    "analyze": "prettier --check \"./src/**/*.{[jt]s,[jt]sx,scss}\"",
+    "docker:build": "docker build -t data-table-app .",
+    "docker:run": "docker run -p 5173:5173 data-table-app",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",

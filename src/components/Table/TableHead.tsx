@@ -1,6 +1,5 @@
 import type { IRowData } from "../../types";
 import { type Table, flexRender } from "@tanstack/react-table";
-import React from "react";
 
 interface ITableHeadProps<T> {
   table: Table<T>;

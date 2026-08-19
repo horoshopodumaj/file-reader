@@ -1,7 +1,6 @@
 import type { IRowData } from "../../types";
 import { type Table, flexRender } from "@tanstack/react-table";
 import type { ReactVirtualizer } from "@tanstack/react-virtual";
-import React from "react";
 
 interface ITableBodyProps<T> {
   table: Table<T>;
