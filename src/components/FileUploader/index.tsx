@@ -1,3 +1,4 @@
+import { MAX_FILE_SIZE } from "../../consts";
 import { type IRowData } from "../../types";
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +21,14 @@ const FileUploader: React.FC = () => {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      dispatch(setError(`Файл слишком большой! Максимальный размер: ${MAX_FILE_SIZE / 1024 / 1024} МБ`));
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+      return;
+    }
 
     const reader = new FileReader();
     reader.onload = e => {

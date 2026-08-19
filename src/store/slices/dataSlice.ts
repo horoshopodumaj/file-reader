@@ -1,7 +1,6 @@
+import { FETCH_FAILED_DATA, UPLOAD_FAILED_DATA } from "../../consts";
 import { type IDataState, type IRowData } from "../../types";
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-import { FETCH_FAILED_DATA, UPLOAD_FAILED_DATA } from "../../components/consts";
 
 import { fetchData } from "../../services/endpoints/fetchData";
 import { uploadData } from "../../services/endpoints/uploadData";

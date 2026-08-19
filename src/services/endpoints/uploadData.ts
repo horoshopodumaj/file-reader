@@ -1,8 +1,7 @@
+import { UPLOAD_FAILED } from "../../consts";
 import type { IRowData } from "../../types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-import { UPLOAD_FAILED } from "../../components/consts";
 
 import { setUploadProgress, setUploading } from "../../store/slices/dataSlice";
 import api from "../api";

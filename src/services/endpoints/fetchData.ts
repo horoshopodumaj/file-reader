@@ -1,8 +1,7 @@
+import { UNKNOWN_ERROR } from "../../consts";
 import type { IRowData } from "../../types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-import { UNKNOWN_ERROR } from "../../components/consts";
 
 import api from "../api";
 
