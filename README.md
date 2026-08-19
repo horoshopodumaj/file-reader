@@ -1,75 +1,87 @@
-# React + TypeScript + Vite
+# Table Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение для загрузки, просмотра и поиска данных в таблице с виртуализацией.
 
-Currently, two official plugins are available:
+## 📋 Функционал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 📁 Загрузка JSON-файлов с данными
+- 🔍 Поиск по таблице с подсветкой найденных совпадений
+- 📊 Виртуализация таблицы для работы с 1000+ строками
+- 📤 Отправка данных на сервер с прогресс-баром
+- ⏹ Отмена загрузки данных
+- 🚀 Автоматическая загрузка данных при первом рендере
 
-## React Compiler
+## 🛠 Технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript**
+- **Redux Toolkit** - управление состоянием
+- **TanStack Table** - работа с таблицей
+- **TanStack Virtual** - виртуализация
+- **Axios** - HTTP-запросы
+- **Vite** - сборка проекта
+- **Docker** - контейнеризация
 
-## Expanding the ESLint configuration
+## 🚀 Запуск проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Локальный запуск
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Установка зависимостей
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Запуск в режиме разработки
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Сборка проекта
+npm run build
+
+# Превью собранного проекта
+npm run preview
 
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Запуск через Docker 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Сборка и запуск контейнера
+docker-compose up --build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Запуск в фоновом режиме
+docker-compose up -d
 
+# Остановка контейнера
+docker-compose down
 ```
+
+# Как использовать
+
+### Загрузка данных
+
+Нажмите кнопку "Загрузить JSON"
+
+Выберите JSON-файл с массивом объектов
+
+Данные отобразятся в таблице
+
+### Поиск
+Введите текст в поле поиска
+
+Поиск начнется автоматически после окончания ввода (debounce 300ms)
+
+Найденные совпадения будут подсвечены желтым цветом
+
+### Отправка на сервер
+
+Нажмите кнопку "Загрузить на сервер"
+
+Будет показан прогресс-бар загрузки
+
+Можно отменить загрузку кнопкой "Отмена"
+
+### API 
+
+Приложение использует API:
+
+GET https://jsonplaceholder.typicode.com/users - получение данных при первом рендере
+
+POST https://jsonplaceholder.typicode.com/posts - отправка данных на сервер

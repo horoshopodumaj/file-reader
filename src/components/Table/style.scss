@@ -1,0 +1,128 @@
+.table-wrapper {
+  background: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.table-empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--helper-color);
+
+  &__title {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  &__hint {
+    font-size: 14px;
+    color: #adb5bd;
+  }
+}
+
+.table-header {
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
+  font-size: 14px;
+  color: var(--helper-color);
+}
+
+.table-container {
+  border: 1px solid var(--border-color);
+  overflow-y: auto;
+  background: white;
+  position: relative;
+  height: auto;
+  max-height: 600px;
+}
+
+.highlight {
+  background-color: var(--highlight);
+  border-radius: 2px;
+}
+
+.table {
+  display: grid;
+}
+
+.stats {
+  font-size: 14px;
+  color: var(--header-second-color);
+}
+
+.thead {
+  display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--thead-background);
+}
+
+.theadTr {
+  display: flex;
+  width: 100%;
+}
+
+.theadTh {
+  display: flex;
+  border-bottom: 1px solid var(--thead-background);
+  border-right: 1px solid var(--thead-background);
+  padding: 2px 4px;
+  text-align: left;
+  padding: 9px 0px;
+  padding: 6px;
+}
+
+.tbody {
+  display: grid;
+  position: relative;
+}
+
+.tbodyTr {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid var(--thead-background);
+}
+
+.tbodyTd {
+  padding: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+
+  word-break: break-word;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.emptyIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  color: var(--auxiliary-color);
+  font-size: 16px;
+}
